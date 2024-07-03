@@ -1,0 +1,43 @@
+
+\apendice{Manual del programador.} 
+
+\section{Estructura de directorios}
+
+Descripción de los directorios y ficheros entregados. 
+
+\begin{itemize}
+  \item \textbf{/:} Directorio base, en el se encuentran el resto de directorios 
+ y los archivos readme dónde se encuentra información relevante del proyecto, las licencias y el código de conducta.
+  
+  \item \textbf{/.github/ISSUE\_TEMPLATE/:} Carpeta que contienen archivos que indican unas guidelines en caso de bugs o peticiones de nuevas características.
+
+  \item \textbf{/application/:} Carpeta que contiene el código fuente para ejecutar el proyecto.
+  
+  \item \textbf{/data/:} Directorio en el que están presentes los datos que posteriormente se vectorizarán para realizar el proceso de RAG
+  
+  \item \textbf{/documentación/:} Carpeta que contiene documentación relevante para entender la totalidad del proyecto, desde aspectos relevantes de su desarrollo hasta guías de ejecución o ejemplos de iteraciones.
+
+  
+    
+\end{itemize}
+
+\section{Compilación, instalación y ejecución del proyecto}
+
+Para visualizar la prueba de concepto simplemente hay que ejecutar el código presente en el repositorio en un entorno con suficiente GPU, por ejemplo, Kaggle o Google colab y acceder al link que se creará al final de la ejecución.
+
+
+\section{Pruebas del sistema}
+
+Para comprobar que la aplicación se haya ejecutado correctamente simplemente hay que comprobar que la ejecución devuelva la interfaz gráfica de usuario con su enlace para ejecutarlo en web.
+
+\section{Instrucciones para la modificación o mejora del proyecto.}
+
+Para la modificación del código simplemente hay que acceder al código presente en el repositorio de GitHub ya sea clonando el repositorio o descargándolo y luego editar el archivo en un editor de texto. Se recomienda para facilitar las pruebas, emplear entornos que faciliten aceleración de GPU como Kaggle o Google colab o bien ejecutarlo en una máquina potente que aguante los altos requisitos del proyecto.
+
+Para la modificación del código es necesario un access token de Hugging Face, cualquier persona puede generarla de manera gratuita con una cuenta de Hugging Face, por lo que el primer paso será acceder a \href{https://huggingface.co/}{Hugging Face}. registrarse e iniciar sesión con la cuenta creada.
+Una vez creada la cuenta se debe acceder a Settings -> Access Token -> New Token y copiar el Token ahí presente.
+Luego se accede al código y, en la sección de login, insertar el token, tendrá este formato:
+\\
+\\
+from huggingface\_hub import login \\ \\
+login("pegar aquí el token de acceso")

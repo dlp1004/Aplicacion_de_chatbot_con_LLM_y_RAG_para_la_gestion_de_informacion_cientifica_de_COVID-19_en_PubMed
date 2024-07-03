@@ -1,0 +1,286 @@
+\documentclass[a4paper,12pt,twoside]{memoir}
+
+% Castellano
+\usepackage[spanish,es-tabla]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % Scalable font
+\usepackage{microtype}
+\usepackage{placeins}
+
+\RequirePackage{booktabs}
+\RequirePackage[table]{xcolor}
+\RequirePackage{xtab}
+\RequirePackage{multirow}
+
+% Links
+\PassOptionsToPackage{hyphens}{url}\usepackage[colorlinks]{hyperref}
+\hypersetup{
+	allcolors = {red}
+}
+
+% Ecuaciones
+\usepackage{amsmath}
+
+% Rutas de fichero / paquete
+\newcommand{\ruta}[1]{{\sffamily #1}}
+
+% Párrafos
+\nonzeroparskip
+
+% Huérfanas y viudas
+\widowpenalty100000
+\clubpenalty100000
+
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
+
+% Imágenes
+
+% Comando para insertar una imagen en un lugar concreto.
+% Los parámetros son:
+% 1 --> Ruta absoluta/relativa de la figura
+% 2 --> Texto a pie de figura
+% 3 --> Tamaño en tanto por uno relativo al ancho de página
+\usepackage{graphicx}
+
+\newcommand{\imagen}[3]{
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=#3\textwidth]{#1}
+		\caption{#2}\label{fig:#1}
+	\end{figure}
+	\FloatBarrier
+}
+
+
+
+
+
+
+
+\graphicspath{ {./img/} }
+
+% Capítulos
+\chapterstyle{bianchi}
+\newcommand{\capitulo}[2]{
+	\setcounter{chapter}{#1}
+	\setcounter{section}{0}
+	\setcounter{figure}{0}
+	\setcounter{table}{0}
+	\chapter*{#2}
+	\addcontentsline{toc}{chapter}{#2}
+	\markboth{#2}{#2}
+}
+
+% Apéndices
+\renewcommand{\appendixname}{Apéndice}
+\renewcommand*\cftappendixname{\appendixname}
+
+\newcommand{\apendice}[1]{
+	%\renewcommand{\thechapter}{A}
+	\chapter{#1}
+}
+
+\renewcommand*\cftappendixname{\appendixname\ }
+
+% Formato de portada
+
+\makeatletter
+\usepackage{xcolor}
+\newcommand{\tutor}[1]{\def\@tutor{#1}}
+\newcommand{\tutorb}[1]{\def\@tutorb{#1}}
+
+\newcommand{\course}[1]{\def\@course{#1}}
+\definecolor{cpardoBox}{HTML}{E6E6FF}
+\def\maketitle{
+  \null
+  \thispagestyle{empty}
+  % Cabecera ----------------
+\begin{center}
+  \noindent\includegraphics[width=\textwidth]{cabeceraSalud}\vspace{1.5cm}%
+\end{center}
+  
+  % Título proyecto y escudo salud ----------------
+  \begin{center}
+    \begin{minipage}[c][1.5cm][c]{.20\textwidth}
+        \includegraphics[width=\textwidth]{escudoSalud.pdf}
+    \end{minipage}
+  \end{center}
+  
+  \begin{center}
+    \colorbox{cpardoBox}{%
+        \begin{minipage}{.8\textwidth}
+          \vspace{.5cm}\Large
+          \begin{center}
+          \textbf{TFG del Grado en Ingeniería de la Salud}\vspace{.6cm}\\
+          \textbf{\LARGE\@title{}}
+          \end{center}
+          \vspace{.2cm}
+        \end{minipage}
+    }%
+  \end{center}
+  
+    % Datos de alumno, curso y tutores ------------------
+  \begin{center}%
+  {%
+    \noindent\LARGE
+    Presentado por \@author{}\\ 
+    en Universidad de Burgos\\
+    \vspace{0.5cm}
+    \noindent\Large
+    \@date{}\\
+    \vspace{0.5cm}
+    %Tutor: \@tutor{}\\ % comenta el que no corresponda
+    Tutores: \@tutor{} -- \@tutorb{}\\
+  }%
+  \end{center}%
+  \null
+  \cleardoublepage
+  }
+\makeatother
+
+\newcommand{\nombre}{Daniel de Lara Pérez}
+\newcommand{\nombreTutor}{José Ignacio Santos Martín} 
+\newcommand{\nombreTutorb}{Virginia Ahedo García} 
+\newcommand{\dni}{71308977F} 
+
+% Datos de portada
+\title{Aplicación de chatbot con LLM y RAG para la gestión de 
+información científica de COVID-19 en PubMed}
+\author{\nombre}
+\tutor{\nombreTutor}
+\tutorb{\nombreTutorb}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+
+\newpage\null\thispagestyle{empty}\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+
+
+\noindent\includegraphics[width=\textwidth]{cabeceraSalud}\vspace{1cm}
+
+\noindent D. \nombreTutor, profesor del departamento de departamento, área de área.
+
+\noindent Expone:
+
+\noindent Que el alumno D. \nombre, con DNI \dni, ha realizado el Trabajo final de Grado en Ingeniería de la Salud titulado Aplicación de chatbot con LLM y RAG para la gestión de 
+información científica de COVID-19 en PubMed. 
+
+\noindent Y que dicho trabajo ha sido realizado por el alumno bajo la dirección del que suscribe, en virtud de lo cual se autoriza su presentación y defensa.
+
+\begin{center} %\large
+En Burgos, {\large \today}
+\end{center}
+
+\vfill\vfill\vfill
+
+% Author and supervisor
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft} %\large
+Vº. Bº. del Tutor:\\[2cm]
+D. \nombreTutor
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft} %\large
+Vº. Bº. del Tutor:\\[2cm]
+D. \nombreTutorb
+\end{flushleft}
+\end{minipage}
+\hfill
+
+\vfill
+
+% para casos con solo un tutor comentar lo anterior
+% y descomentar lo siguiente
+%Vº. Bº. del Tutor:\\[2cm]
+%D. nombre tutor
+
+
+\newpage\null\thispagestyle{empty}\newpage
+
+
+
+
+\frontmatter
+
+% Abstract en castellano
+\renewcommand*\abstractname{Resumen}
+\begin{abstract}
+Durante la pandemia de 2020, se generó una gran cantidad de información; sin embargo, no toda fue válida, ya que también se publicaron muchos datos falsos o poco contrastados. Los modelos de lenguaje modernos a menudo utilizan datos de entrenamiento cuya veracidad no siempre puede ser confirmada. Para abordar este problema, se propuso como prueba de concepto estudiar la tecnología RAG (Retrieval-Augmented Generation) en modelos grandes de lenguaje, aplicándola a datos de artículos revisados sobre Covid-19.
+
+La tecnología RAG combina la recuperación de información y la generación de lenguaje natural, creando una base de datos con información vectorizada. Cuando se envía una petición al sistema, este recupera la información más relevante y la proporciona al Modelo Grande de Lenguaje (LLM), que genera una respuesta especializada basada en los datos obtenidos. Este enfoque busca mejorar la precisión y la fiabilidad de las respuestas generadas por los modelos de lenguaje, asegurando que se basen en datos contrastados y verificables.
+
+Para este estudio, se utilizaron abstracts de 10,000 papers científicos publicados en PubMed, seleccionados como datos de recuperación para obtener información altamente especializada. El proceso involucró la vectorización de estos abstracts, permitiendo al modelo recuperar rápidamente información relevante y precisa. La implementación resultante fue una aplicación de chatbot que emplea RAG para devolver información contrastada, con referencias claras a las fuentes originales, asegurando así la fiabilidad de las respuestas.
+
+Este desarrollo representa un avance significativo en la investigación biomédica. La adaptación de tecnologías de modelos grandes de lenguaje a un campo que requiere datos precisos y revisados mejora la capacidad de los investigadores y profesionales de la salud para acceder a información confiable. Al garantizar que las respuestas generadas por el chatbot estén respaldadas por artículos científicos revisados, se promueve una mayor confianza en las herramientas basadas en inteligencia artificial dentro del ámbito biomédico. Este enfoque no solo mejora la calidad de la información disponible durante crisis sanitarias como la pandemia de Covid-19, sino que también establece un precedente para el uso de tecnologías avanzadas en la gestión de información científica.
+\end{abstract}
+
+\renewcommand*\abstractname{Descriptores}
+\begin{abstract}
+Chatbot, Large Language Models(LLM), Retrieval-augmented Generation(RAG), Procesamiento de lenguaje natural(NLP), Inteligencia artificial, Aprendizaje automático, Embeddings, Base de datos
+vectorial, Covid-19, artículos científicos. \ldots
+\end{abstract}
+
+\clearpage
+
+% Abstract en inglés
+\renewcommand*\abstractname{Abstract}
+\begin{abstract}
+During the 2020 pandemic, a large amount of information was generated; however, not all of it was valid, as many false or poorly verified data were also published. Modern language models often use training data whose accuracy cannot always be confirmed. To address this issue, a proof of concept was proposed to study RAG (Retrieval-Augmented Generation) technology in large language models, applying it to reviewed articles on Covid-19.
+
+RAG technology combines information retrieval and natural language generation by creating a database with vectorized information. When a query is sent to the system, it retrieves the most relevant information and provides it to the Large Language Model (LLM), which generates a specialized response based on the retrieved data. This approach aims to improve the accuracy and reliability of the responses generated by language models, ensuring they are based on verified and reliable data.
+
+For this study, abstracts from 10,000 scientific papers published in PubMed were used, selected as retrieval data to obtain highly specialized information. The process involved vectorizing these abstracts, allowing the model to quickly retrieve relevant and accurate information. The resulting implementation was a chatbot application using RAG that returns verified information with clear references to the original sources, thus ensuring the reliability of the responses.
+
+This development represents a significant advancement in biomedical research. Adapting large language model technologies to a field that requires precise and reviewed data enhances the ability of researchers and health professionals to access reliable information. By ensuring that the responses generated by the chatbot are backed by peer-reviewed scientific articles, greater confidence is promoted in AI-based tools within the biomedical field. This approach not only improves the quality of information available during health crises such as the Covid-19 pandemic but also sets a precedent for the use of advanced technologies in the management of scientific information.
+
+
+\end{abstract}
+
+\renewcommand*\abstractname{Keywords}
+\begin{abstract}
+Chatbot, Large Language Models (LLM), Retrieval-augmented Generation (RAG), Natural Language Processing (NLP), Artificial Intelligence, Machine Learning, Embeddings, Vector Database, Covid-19, Scientific Articles.
+\end{abstract}
+
+\clearpage
+
+% Indices
+\tableofcontents
+
+\clearpage
+
+\listoffigures
+
+\clearpage
+
+\listoftables
+\clearpage
+
+
+\mainmatter
+\include{./tex/1_introduccion}
+\include{./tex/2_objetivos}
+\include{./tex/3_teoricos}
+\include{./tex/4_metodologia}
+\include{./tex/5_resultados}
+\include{./tex/6_conclusiones}
+\include{./tex/7_lineas_futuras}
+
+
+\bibliographystyle{apalike}
+\bibliography{bibliografia}
+
+\end{document}

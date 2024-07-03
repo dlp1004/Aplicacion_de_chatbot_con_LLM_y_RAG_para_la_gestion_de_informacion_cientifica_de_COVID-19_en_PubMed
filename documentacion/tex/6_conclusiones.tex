@@ -1,0 +1,46 @@
+\capitulo{6}{Conclusiones}
+
+\section{Conclusiones de la prueba de concepto}
+
+\subsection{Contexto}
+
+Cómo ya se ha especificado en capítulos anteriores este proyecto trata de una prueba de concepto, es decir, el estudio de una tecnología y sus aplicaciones al ámbito de la investigación biomédica. Esta tecnología se trataba de la de los modelos grandes de lenguaje, en boca de todos últimamente debido a su gran utilidad y de las técnicas de RAG, más desconocidas para el público general pero que ayuda en gran medida a la especialización de los modelos sin tener que reentrenarlos lo que es costoso tanto computacionalmente como monetariamente.
+
+La idea de este proyecto surgió explorando distintas aplicaciones de RAG, en concreto el curso de LangChain: Chat with Your Data por Harrison Chase Co-fundador y CEO de LangChain \cite{harrison_chase_langchain}, en este curso propone el empleo de RAG para poder hacer preguntas sobre cualquier tipo de datos como por ejemplo: CSVs, vídeos, páginas web o pdfs.
+
+Al observar esta tecnología surgió la duda de su aplicación en el campo de la salud y, al ser un evento mundial que generó una enorme cantidad de datos y bulos, se exploró el Covid-19 como ejemplo en el que probar esta tecnología.
+
+La aplicación creada resulta simple de usar para cualquier profesional sanitario que quiera emplearla para el desarrollo de sus funciones, tiene un lenguaje destinado a que se entienda cada funcionalidad de forma intuitiva y el único problema es la barrera de lenguaje que se propondrá como una linea de trabajo futura en el caso de que el proyecto tenga más desarrollo tras la finalización de este trabajo fin de grado.
+
+Los resultados que se han obtenido son buenos, se puede tokenizar fácilmente la información en los abstracts de los papers científicos y el retrieval es correcto, las respuestas sacan su información en los abstracts recuperados y no alucinan la información basándose en otro conocimiento externo que el modelo pueda tener. 
+
+En el anexo G se realizó una prueba de validación de los resultados obtenidos por el modelo, en general todas las validaciones fueron buenas exceptuando alguna de versiones sin los hiperparámetros afinados hasta el mejor resultado.
+
+Las versiones finales aportadas en el capítulo de resultados de estas memorias son las que mejor resultado tienen y se observa un desempeño impecable en cada uno de los apartados de la tabla de validación presente en el anexo C.
+
+El estudio de las técnicas de RAG y su aplicación al ámbito de la investigación biomédica ha sido un éxito y ha sido una tecnología que aporta una poderosa herramienta a los profesionales sanitarios a la hora de recibir respuestas altamente especializadas.
+
+A la hora de encontrar trabajos que relacionen las tecnologías de RAG en el ámbito de la salud no se ha logrado encontrar ninguna aplicación específica, todo lo encontrado se trataba de aplicaciones con RAG personalizables, lo que aportaba poca especificidad a la hora de generar respuestas o , simplemente, artículos teóricos sobre cómo su implementación impactaría el ámbito de la medicina (positivamente en todos los casos).
+
+\section{Aspectos relevantes.}
+
+Los grandes desafíos de este proyecto fueron el enorme requisito de gpu y la parametrización de los modelos y técnicas.
+
+El gran requisito de las librerias empleadas rápidamente hicieron que el entorno de trabajo cambiara de Visual Studio Code a Google Colab por sus entornos de ejecución que proveen aceleración por hardware, mejorando la gpu disponible y permitiendo que siquiera se pueda ejecutar el proyecto.
+
+La primera idea de desarrollo de este proyecto fue el desarrollo de una aplicación web empleando streamlit, el problema que rápidamente apareció fue la gran cantidad de gpu necesaria para el correcto funcionamiento de un LLM lo que limitaba en gran medida dónde podría hostearse la aplicación y haciendo imposible su despliegue directo en streamlit.
+
+Ante ese problema se plantearon varias soluciones como el uso de LLMs alojados en servidores externos, de pago o el uso de modelos más pequeños.
+
+Ya que, al ser una prueba de concepto se buscaba ahorrar los costes de un modelo de pago se optó por emplear un modelo más pequeño que el que resultó ser finalmente seleccionado, el Mistral 7-B, sin embargo esto también fue rápidamente descartado ya que los resultados de este modelo no eran buenos, no entendía los prompts y las salidas tenían grandes problemas de redacción.
+
+Tras este fracaso se optó por buscar distintas maneras de desarrollar una interfaz gráfica desde la interfaz de google colab, aprovechando su opción de aceleración por hardware, hasta que se desarrolló la interfaz actual en Gradio.
+
+Tras la selección del modelo y de la interfaz tuvo lugar la fase mas larga del desarrollo del proyecto llegando a ocupar la mayor parte del tiempo, el afinado de hiperparámetros.
+
+Se trabajó primero con unos hiperparámetros por defecto del retrieval para enfocarse en los del modelo, modificándolos hasta que se generaba bien el texto, sin fallas que afecten a la legibilidad. Durante el desarrollo se generaron varias salidas con una difícil legibilidad, algunos vestigios de ello aún presentes en los anexos, esto fue debido a una desproporcionada penalización por repetición a lo que el modelo respondía eliminando los espacios, sin embargo la información contenida era correcta, el resultado final fue un modelo que genera el texto de una forma legible y bien presentada pero con una baja temperatura, es decir que tiende a ser menos creativo con las respuestas y ceñirse a la información dada.
+
+Tras esto se procedió con la parametrización del retriever, un proceso mucho más simple y corto ya que simplemente se decantó por emplear el método de búsqueda por similitud, el cual devolvía aquellos anexos que superasen cierto valor umbral, este threshold se estableció de tal manera que recuperase todos los archivos relevantes con la petición del usuario y eliminase aquellos que se parecían ligeramente sin llegar a tener una similitud significativa.
+
+Tras este afinado el proyecto ofreció muy buenos resultados como se puede ver en el capítulo de resultados en esta misma memoria.
+

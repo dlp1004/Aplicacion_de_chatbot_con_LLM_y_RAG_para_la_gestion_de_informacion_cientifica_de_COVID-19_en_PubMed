@@ -1,0 +1,104 @@
+\capitulo{2}{Objetivos}
+
+\section{Introducción}
+
+Objetivos principales del trabajo realizado.
+
+Este apartado explica de forma precisa y concisa cuales son los objetivos que se persiguen con la realización del proyecto. Se puede distinguir entre:
+\begin{enumerate}
+    \item Los objetivos marcados por los requisitos del software/hardware/análisis a desarrollar.
+    \item Los objetivos de carácter técnico, relativos a la calidad de los resultados, velocidad de ejecución, fiabilidad o similares.
+    \item Los objetivos de aprendizaje, relativos a aprender técnicas o herramientas de interés. 
+\end{enumerate}
+
+\subsection{¿Qué no son objetivos?}
+
+A modo de aclaración cabe recalcar que este trabajo de fin de grado es una prueba de concepto por lo que es prudente dejar claro cuales no son objetivos de este trabajo.
+
+\begin{enumerate}
+
+    \item No es objetivo de este proyecto crear una aplicación de LLM perfectamente terminada y con espacios de soportes permanentes, este tipo de aplicaciones requieren una potencia de cálculo y unas prestaciones completamente fuera del alcance de un alumno de carrera, por lo que en esta prueba de concepto se recurren a demos temporales para probar la tecnología de estudio.
+    
+    \item Tampoco se busca crear una aplicación de chatbot parecida a las múltiples presentes en el mercado como, por ejemplo, ChatGPT o Gemini. Estas aplicaciones rápidamente han pasado a formar parte de nuestra vida diaria, tanto como para consultas rápidas como para inspiración en distintos proyectos entre muchas otras aplicaciones, el problema que presentan es la fiabilidad de los datos de entrenamiento. Muchas veces estos datos que disponen los modelos son privados o están sacados del internet donde cualquier persona puede añadir o modificar la información, esto hace estos modelos útiles para ciertas tareas pero poco confiables para otras más sofisticadas dónde información precisa, confiable y, más importante, que haya información sobre su procedencia para contrastarla es necesaria, en este caso ese ámbito es el de la salud pública e investigación biomédica en los que, en caso de haber un fallo, las consecuencias podrían conllevar a desastres cómo la pérdida de grandes sumas de fondos de investigación o, como peor escenario posible, la muerte de un paciente.
+    
+    \item Para terminar estas aclaraciones previas, es relevante recalcar que este trabajo de fin de grado no tiene como objetivo volver a entrenar modelos ya entrenados y especializarlos en datos biomédicos, esto se debe a que los costes computacionales y, por lo tanto, monetarios de entrenar un modelo grande de datos son enormes, completamente fuera de la escala de, no sólo este proyecto si no de la gran mayoría de presupuestos de investigación. Estos costes, como quedan reflejados en las tablas \ref{fig:cost1}, \ref{fig:cost2} y \ref{fig:cost3} a parte de ser insondables, aumentan cada año a ritmos vertiginosos, siendo muy difícil seguirles el ritmo sin el potencial adquisitivo de una empresa que dedique gran parte de sus fondos a ello.
+    
+\end{enumerate}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/costes1.png}
+    \caption{Coste estimado del entrenamiento de distintos LLM, diagrama de barras recuperado de \cite{nestor_maslej_et_al_2024}}
+    \label{fig:cost1}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/costes2.png}
+    \caption{Coste estimado del entrenamiento de distintos LLM, diagrama de dispersión recuperado de \cite{nestor_maslej_et_al_2024}}
+    \label{fig:cost2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/costes3.png}
+    \caption{Coste estimado del entrenamiento de los LLM más populares, diagrama de dispersión recuperado de \cite{nestor_maslej_et_al_2024}}
+    \label{fig:cost3}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Objetivos del proyecto}
+
+En esta sección se expondrá lo que si se pretende lograr con el proyecto ya que, aunque se trate de una prueba de concepto, se deben cuidar unos mínimos de calidad para continuar con el proyecto si la prueba resulta exitosa, viable y su aplicación supone una mejora en los ámbitos ya presentes.
+
+\subsubsection{Objetivos de aprendizaje}
+
+
+
+\begin{enumerate}
+
+    \item Este Trabajo de fin de grado tiene cómo primer y principal objetivo aprender la técnica de Retrieval Augmented Generation o, como se conoce por sus siglas, RAG. Esta técnica busca abaratar costes y ahorrar tanto tiempo como coste computacional, con todo el beneficio en el medio ambiente que eso conlleva frente a técnicas de entrenamiento tradicionales, es decir, que con esta técnica se busca aprovechar los modelos previamente entrenados para especializarlos en información específica sin necesidad de entrenar desde cero un modelo.
+    
+    \item El trabajo forma parte de la titulación de Ingeniería de la Salud, una titulación que tiene como objetivo principal la aplicación de las técnicas desarrolladas por la ingeniería en el ámbito de la salud e investigación biomédica por lo que, esta investigación de RAG no sólo consistirá en la exploración de la técnica sino que un fuerte componente del proyecto será la de indagar como esta técnica se comporta ante datos tan precisos y complejos como son los que genera la investigación biomédica.
+    
+    \item Durante la pandemia del Covid-19 en 2020 se generó una gran cantidad de datos e investigaciones que ayudaron a la población mundial a salir de la delicada situación en la que se encontraba, la gran cantidad de información hace que sea difícil para un sólo profesional abarcarla toda, por lo que, para facilitar la tarea de seguimiento e investigación de este terrible virus, se plantea especializar los datos sobre los que el modelo hará el proceso de RAG en Covid-19, esto permitirá rápidas consultas de información a un modelo con información localizada en un medio tan confiable como lo es PubMed. 
+
+    \item Por último, pero no por ello menos importante, recalcar el interés personal del autor en aprender información tanto practica como teórica en ámbitos de inteligencia artificial y ciencia de datos, así como desarrollar una aplicación que pueda ser de ayuda en el campo de la salud.
+    
+\end{enumerate}
+
+\subsubsection{Objetivos software}
+
+\begin{enumerate}
+
+    \item Como principal objetivo software se busca crear un chatbot, es decir, una inteligencia artificial cuyo funcionamiento sea muy simple, que se le haga una pregunta o consulta que tenga relación con el y que el modelo arroje al usuario una respuesta.
+    
+    \item Objetivos adicionales en cuanto a software son funcionalidades básicas del chatbot como podría ser la repetición de la consulta o la eliminación de iteraciones de chat.
+    
+    \item Otro objetivo software es la disponibilidad de la herramienta en la nube, lo que permitirá que varias personas accedan al proyecto al mismo tiempo a la vez que le aporte portabilidad ya que se podrá ejecutar en distintos equipos en lugares del mundo diferentes.
+
+    \item El último requisito software es la creación de una interfaz gráfica usuario (GUI) encargada de comunicar al usuario con el programa, que sea cómoda e intuitiva de usar para cualquier profesional de la salud sin ningún tipo de experiencia informática, no hay que olvidar que los destinatarios finales podrían encontrar dificultades a la hora de emplear interfaces complejas.
+    
+\end{enumerate}
+
+\subsubsection{Objetivos técnicos}
+
+En este apartado se explorarán las distintas características que debe tener la aplicación para que sea válida y cumpla los objetivos previamente mencionados en los apartados anteriores.
+
+\begin{enumerate}
+
+    \item \textbf{Fiabilidad:} como característica principal que busca la aplicación es la fiabilidad de la información con la que está entrenada, esto se consigue sacando la información de una base de datos biomédica de gran prestigio como lo es PubMed y que los usuarios puedan de manera cómoda contrastar la información que se les proporciona por lo que cada respuesta incluirá, en cualquier caso, con los abstracts de los artículos de entrenamiento que el programa haya detectado como relevantes así como del enlace al artículo para que en cualquier momento, si el usuario lo desea, pueda acceder al texto completo de los artículos recuperados relevantes a su consulta para contrastar personalmente la información.
+    
+    \item \textbf{Proactividad:} el programa al devolver la información completa busca no sólo responder a la pregunta del usuario sino también ampliar la información que este posee en el ámbito de lo consultado por el mismo, por ejemplo si busca los principales síntomas del Covid-19 el programa le devolverá una lista con los mismos, pero, a parte de eso, le devolverá los abstracts recuperados y un enlace al texto completo de sus artículos, en ellos podrá acceder a información mas completa sobre estos síntomas, como, por ejemplo como aliviarlos.
+    
+    \item \textbf{Intuitividad:} entre los usuarios finales de este proyecto se encuentran especialistas que no tienen conocimiento en informática, esto obliga a la aplicación a ser intuitiva y fácil de usar por ellos.
+
+    \item \textbf{Escalabilidad:} como se ha repetido varias veces en este capítulo, este proyecto se trata de una prueba de concepto por lo que, el código desarrollado para el mismo debe de estar correctamente comentado y documentado así cómo ser fácil de entender y mejorar para que futuros desarrolladores puedan generar mejoras o crear sus propias aplicaciones similares especializadas en otros ámbitos de la salud.
+
+    \item \textbf{Calidad:} un buen programa que interactúe con el usuario,  debe mantener unos requisitos entre estos se encuentran recuperar un contexto relevante, que la información recuperada sea exacta, clara, consistente y exhaustiva.
+    El lenguaje empleado debe ser fluido y pertinente, sin el empleo de lenguaje vulgar.
+    
+
+    
+\end{enumerate}

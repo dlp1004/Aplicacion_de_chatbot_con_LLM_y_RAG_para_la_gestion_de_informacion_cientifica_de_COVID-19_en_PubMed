@@ -1,0 +1,87 @@
+\capitulo{1}{Introducción}
+
+\section{Contexto del desarrollo del trabajo}
+
+Este proyecto es un trabajo de fin de grado de Ingeniería de la Salud en la Universidad de Burgos, esta titulación tiene como objetivo encontrar soluciones en el ámbito de la Ingeniería aplicables a el campo de la salud y de la investigación biomédica.
+
+La pandemia generada por el virus del Covid-19 en 2020 generó, por su gravedad e impacto en la sociedad, una inmensa cantidad de datos, muchos eran artículos científicos con un gran respaldo, sin embargo, debido a que afectó a toda la población en una forma u otra también se generó bastante desinformación, bulos o afirmaciones poco contrastadas que conllevan a información poco precisa.
+
+La inteligencia artificial es un tema que en los últimos años ha pasado rápidamente a formar parte de nuestras vidas, ya sea por usarlo para generar respuestas como en el caso de ChatGPT, para generar imágenes para fines recreativos y comerciales o también por los múltiples debates éticos que esta suscita. Sea por lo que sea es innegable que la inteligencia artificial forma una parte importante de la vida moderna y, dado la gran utilidad que estas tecnologías han logrado demostrar, no es de extrañar.
+
+Mucha gente usa chatbots como ChatGPT para diversas tareas en las que ha probado generar muy buenos resultados, como la traducción, hay algún ejemplo en este mismo trabajo, aún así hay quien también lo usa para recuperar información, lo cual puede llegar a ser peligroso. Los datos de entrenamiento normalmente no suelen ser públicos o pueden simplemente tratarse de información recuperad de internet, sin estar contrastada ni revisada. Esto puede generar simplemente inconveniencias en información poco relevante y sencilla pero en casos más relevantes y en los que información más exacta es necesaria puede no funcionar tan bien.
+
+Para ello y recuperando el tema central de la información se ha buscado una manera de especializar a un modelo en datos relevantes y con información exhaustiva y revisada como la que se encuentra en uno de los mayores repositorios de información biomédica del mundo, PubMed.
+
+Reentrenar un modelo no es una tarea sencilla y está completamente fuera del alcance de un alumno de universidad, en el capítulo 2, objetivos, se especificarán más a fondo los costes de entrenamiento. Debido a esto se exploraron otros métodos para especializar los modelos y se encontró una técnica denominada RAG o, por sus siglas, Retrieval Augmented Generation. Esta técnica consiste en vectorizar información y almacenarla en una base de datos denominada vectorizada. Cuando a un modelo ya entrenado se le haga una pregunta en vez de pasársela directamente al modelo se vectorizará la pregunta y se comparará con las presentes en la base de datos vectorizada, recuperando aquellas que más se parezcan matemáticamente a la pregunta puesto que se interpretará que son aquellas que están relacionadas, tras esto se devolverá la pregunta en lenguaje natural junto a la información recuperada también en lenguaje natural, todo ello se le pasará al modelo para generar una respuesta altamente específica sobre la información recuperada.
+
+
+\section{Estructura de la memoria}
+
+\subsection{2\_Objetivos}
+
+En este capítulo se explicarán los objetivos que se quieren lograr con este proyecto, tanto los objetivos del software desarrollado, los técnicos así como los de investigación de la aplicación de LLMs y RAG al ámbito sanitario.
+
+\subsection{3\_Teóricos}
+
+En los conceptos teóricos se definirá exhaustivamente toda la información relevante al proyecto, explicando e indagando toda la información que pueda ser interesante para el entendimiento del proyecto y de las tecnologías asociadas.
+
+\subsection{4\_Metodología}
+
+En esta sección se enumerarán y describirán toas las herramientas que forman parte de la creación del trabajo, desde las librerías importadas para el desarrollo del software, como programas para gestionar el flujo de trabajo.
+
+\subsection{5\_resultados}
+
+En esta sección se expondrán los resultados obtenidos teniendo en cuenta los objetivos previamente planteados. También se incluye una pequeña discusión de los mismos.
+
+\subsection{6\_Conclusiones}
+
+Capítulo en el que converge toda la información desarrollada a lo largo del ciclo de vida del trabajo, se analiza lo que se ha conseguido y se indican aspectos relevantes acontecidos durante la duración de todo el proyecto cómo, por ejemplo, las dificultades y problemas encontrados.
+
+\subsection{7\_Lineas futuras}
+
+En este capítulo se encuentran posibles ideas de mejora del proyecto de cara al futuro. 
+
+\section{Estructura de los anexos}
+
+\subsection{A\_Planificación}
+
+En este anexo se puede encontrar aspectos relevantes al desarrollo e implementación del proyecto, se destaca la planificación temporal del desarrollo de la aplicación, una hipotética planificación económica a la hora de llevarlo a cabo y una planificación legal para poder publicar un proyecto de esta índole. 
+
+\subsection{B\_Manual\_usuario}
+
+Apéndice que busca servir de guía para el usuario final que use la aplicación, en el se indican los requisitos necesarios para que pueda ejecutarse correctamente, guías de instalación y manuales que expliquen su utilización.
+
+\subsection{C\_Manual\_programador}
+
+Apéndice que busca servir de guía para futuros programadores que trabajen en este proyecto, en él pueden el pueden encontrar:
+
+\begin{itemize}
+  \item La estructura de directorios presente en los archivos del proyecto.
+  
+  \item Guías para la instalación y ejecución del proyecto.
+
+  \item Pruebas del sistema para ratificar la correcta ejecución del programa.
+  
+  \item Instrucciones para la mejora del proyecto.
+    
+\end{itemize}
+
+\subsection{D\_Datos}
+
+Anexo en el que se realizará una descripción fomal de sus datos así cómo se especifica su obtención.
+
+\subsection{E\_Diseño}
+
+Aquí se explicarán de manera gráfica el despliegue del proyecto, lo que facilitará su comprensión.
+
+\subsection{F\_requisitos}
+
+Lista de requisitos funcionales y no funcionales que debe cumplir el programa, también se incluirán los casos de uso posibles dentro del mismo.
+
+\subsection{G\_Experimental}
+
+Apéndice en el que se muestran y comparan diferentes salidas del proyecto, también se incluye una validación por parte de terceros de los datos obtenidos por el programa.
+
+\subsection{H\_ODS}
+
+Anexo de sostenibilidad curricular, se defenderá el porqué el proyecto cumple con todos los principios de sostenibilidad.

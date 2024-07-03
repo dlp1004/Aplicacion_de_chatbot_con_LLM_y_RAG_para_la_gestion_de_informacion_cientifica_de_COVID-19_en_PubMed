@@ -1,0 +1,98 @@
+\apendice{Manual de especificación de diseño}
+
+
+
+\section{Planos}
+
+No proceden en este proyecto
+
+\section{Diseño arquitectónico}
+
+En esta sección se mostrarán los diagramas de secuencia de cada caso de uso lo que aportará claridad a su ejecución además de un diagrama de componentes que esquematizará los distintos miembros constituyentes presentes en el proyecto.
+
+\subsection{Diagramas de secuencia}
+
+\textbf{CU-1 Generar Respuesta}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/dseq_CU1.png}
+    \caption{Diagrama de secuencia del caso de uso número 1}
+    \label{fig:dseq1}
+\end{figure}
+
+Ver imagen \ref{fig:dseq1}
+
+\textbf{CU-2 Actualizar el modelo}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/dseq_CU2.png}
+    \caption{Diagrama de secuencia del caso de uso número 2}
+    \label{fig:dseq2}
+\end{figure}
+
+Ver imagen \ref{fig:dseq2}
+
+\textbf{CU-3 Modificar la información especializada}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/dseq_CU3.png}
+    \caption{Diagrama de secuencia del caso de uso número 3}
+    \label{fig:dseq3}
+\end{figure}
+
+Ver imagen \ref{fig:dseq3}
+
+\textbf{CU-4 Repetir el prompt}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/dseq_CU4.png}
+    \caption{Diagrama de secuencia del caso de uso número 4}
+    \label{fig:dseq4}
+\end{figure}
+
+Ver imagen \ref{fig:dseq4}
+
+\textbf{CU-5 Eliminar conversación}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/dseq_CU5.png}
+    \caption{Diagrama de secuencia del caso de uso número 5}
+    \label{fig:dseq5}
+\end{figure}
+
+Ver imagen \ref{fig:dseq5}
+
+\subsection{Diagrama de componentes}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{img/components.png}
+    \caption{Diagrama de componentes del proyecto}
+    \label{fig:comps}
+\end{figure}
+
+En la figura \ref{fig:comps} se puede apreciar el diagrama de componentes del proyecto que pretende ilustrar la disposición de cada parte relevante de la aplicación así como sus interacciones. A continuación se explicará brevemente cada componente.
+
+\begin{itemize}
+
+    \item \textbf{Aplicación:} código general que tiene función estructural y de control del resto de componentes del proyecto.
+    
+    \item \textbf{HuggingFace:} comunidad de inteligencia artificial que permite el acceso mediante tokens a modelos de manera gratuita con alguna restricción.
+
+    \item \textbf{Mistral 7B:} modelo Grande de Lenguaje (LLM) creado por Mistral, destaca por su pequeño tamaño y gran optimización en comparación a otros modelos similares lo que permite una relación coste/calidad superior.
+    
+    \item \textbf{GUI:} interfaz de usuario desarrollada con el framework de Gradio que permite al usuario interactuar de manera cómoda e intuitiva con el proyecto.
+    
+    \item \textbf{Base de datos vectorizada:} base de datos de tipo índice FAISS que contiene la información de entrenamiento para el proceso de RAG vectorizada para calcular su similitud matemática con el prompt de entrada.
+    
+    \item \textbf{Generación de embeddings:} proceso realizado por un modelo de machine learning que representa la información originalmente pasada en lenguaje natural como un vector medible y comparable.
+    
+    \item \textbf{Datos de entrenamiento:} conjunto de datos en .CSV (podrían tener otros formatos) sobre los que se quieren obtener respuestas especializadas.
+    
+\end{itemize}
+

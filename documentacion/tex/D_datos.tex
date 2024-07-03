@@ -1,0 +1,46 @@
+\apendice{Descripción de adquisición y tratamiento de datos}
+
+
+\section{Descripción formal de los datos}
+
+Los datos empleados en el proceso de RAG para refinar los resultados es un gran dataset publicado en Kaggle en formato csv. Este Dataset consta de tres campos:
+
+\begin{itemize}
+
+    \item title: el título del paper
+    \item abstract: el abstract del paper
+    \item url: URL que dirige al paper
+
+\end{itemize}
+
+El dataset contiene 10000 papers en total
+
+En esta prueba de concepto sólo son de interés los abstract, las otras dos columnas no se utilizarán.
+
+\cite{Anandhu_H_abstracts_2023}
+    
+\section{Descripción clínica de los datos.}
+
+\subsection{Papers científicos}
+
+Un paper científico es un documento escrito cuyo objetivo es la divulgación de la investigación realizada por profesionales. Los papers científicos forman el soporte estructural de toda la ciencia ya que estos documentos no sólo aportan valor en la época que son publicados sino que permanecen en el tiempo convirtiéndose en parte fundamental del conocimiento.
+Los papers usualmente contienen una estructura formada por abstract, introducción, materiales y métodos, resultados, discusión, conclusión y referencias.\cite{katz_elements_1985} 
+
+\subsection{Abstracts}
+
+El abstract es la parte más importante del paper científico puesto que, además de servir cómo resumen del mismo, es la carta de presentación del paper, siendo la primera sección que los interesados consultarán.
+
+Un abstract debe ser escrito según las guías de la revista científica en la que será publicado el artículo y preferiblemente deberá contener entre 150 y 250 palabras. Las preguntas fundamentales que un abstract debe responder son las siguientes:
+
+\begin{itemize}
+
+    \item ¿Porqué se empezó la investigación?
+    \item ¿Qué se hizo en la investigación?
+    \item ¿Qué encontramos?
+    \item ¿Qué significan los resultados?
+
+\end{itemize}
+
+\cite{meo_anatomy_2018}
+
+
