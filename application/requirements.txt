@@ -1,0 +1,15 @@
+torch==2.3.0
+datasets
+tensorflow==2.15
+langchain
+sentence_transformers
+faiss-cpu
+transformers
+git+https://github.com/huggingface/diffusers
+peft==0.4.0
+bitsandbytes==0.41.3
+trl==0.4.7
+langchain-community
+gradio
+typer==0.12.3
+click==8.0
