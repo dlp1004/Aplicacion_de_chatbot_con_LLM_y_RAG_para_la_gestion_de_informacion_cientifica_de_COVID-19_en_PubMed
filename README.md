@@ -33,11 +33,11 @@ Una vez iniciada la GUI de la manera indicada en el punto anterior, simplemente 
 
 - Licencia de Python Software Foundation
 
--Licencia BSD modificada
+- Licencia BSD modificada
 
--Licencia Apache 2.0
+- Licencia Apache 2.0
 
--Licencia MIT
+- Licencia MIT
 
 # 8. Contacto
 
