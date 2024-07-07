@@ -30,5 +30,32 @@ su desarrollo hasta guías de ejecución o ejemplos de iteraciones.
 # 4. Guía de instalación y ejecución del proyecto
 
 Para visualizar la prueba de concepto simplemente hay que ejecutar el
-código presente en el repositorio en un entorno con suficiente GPU, por ejemplo, Kaggle o Google colab y acceder al link que se creará al final de la
+código presente en este repositorio,localizado en el directorio application, en un entorno con suficiente GPU, por ejemplo, Kaggle o Google colab y acceder al link que se creará al final de la
 ejecución
+
+# 5. Como usar el proyecto
+
+Una vez iniciada la GUI de la manera indicada en el punto anterior, simplemente introducir la petición en el cuadro de texto y pulsar el botón situado a su derecha llamado "submit".
+
+# 6. Créditos
+
+Este proyecto ha sido desarrollado por Daniel de Lara Pérez
+
+Dirigido por José Ignacio Santos Martín y Virginia Ahedo García, profesores de la Universidad de Burgos.
+
+Se han seguido los tutoriales Chat with your data de Harrison Chase, Creo mi propio AYUDANTE para BUSCAR en WEBS con LANGCHAIN y MISTRAL AI por AlexFocus y notebooks proporcionados por los directores.
+
+# 7. Licencias
+
+- Licencia de Python Software Foundation
+
+- Licencia BSD modificada
+
+- Licencia Apache 2.0
+
+- Licencia MIT
+
+# 8. Contacto
+
+Cualquier duda, petición o cuestión en general sed libres de dejar un issue en este repositorio o contactarme en mi correo dlp1004@alu.ubu.es
+
