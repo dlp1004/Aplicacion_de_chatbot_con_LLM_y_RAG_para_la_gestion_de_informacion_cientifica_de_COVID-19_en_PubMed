@@ -10,11 +10,15 @@ Trabajo de fin de grado de Ingeniería de la Salud de la Universidad de Burgos. 
 
 Descripción de los directorios y ficheros en este repositorio.
 
-/: Directorio base. Contiene el resto de directorios y los archivos README, donde se encuentra información relevante del proyecto, las licencias y el código de conducta.
-/.github/ISSUE_TEMPLATE/: Carpeta que contiene archivos que indican unas guidelines en caso de bugs o peticiones de nuevas características.
-/application/: Carpeta que contiene el código fuente para ejecutar el proyecto.
-/data/: Directorio en el que están presentes los datos que posteriormente se vectorizarán para realizar el proceso de RAG.
-/documentación/: Carpeta que contiene documentación relevante para entender la totalidad del proyecto, desde aspectos relevantes de su desarrollo hasta guías de ejecución o ejemplos de iteraciones.
+- /: Directorio base. Contiene el resto de directorios y los archivos README, donde se encuentra información relevante del proyecto, las licencias y el código de conducta.
+
+- /.github/ISSUE_TEMPLATE/: Carpeta que contiene archivos que indican unas guidelines en caso de bugs o peticiones de nuevas características.
+
+- /application/: Carpeta que contiene el código fuente para ejecutar el proyecto.
+
+- /data/: Directorio en el que están presentes los datos que posteriormente se vectorizarán para realizar el proceso de RAG.
+
+- /documentación/: Carpeta que contiene documentación relevante para entender la totalidad del proyecto, desde aspectos relevantes de su desarrollo hasta guías de ejecución o ejemplos de iteraciones.
 
 # 4. Guía de instalación y ejecución del proyecto
 
