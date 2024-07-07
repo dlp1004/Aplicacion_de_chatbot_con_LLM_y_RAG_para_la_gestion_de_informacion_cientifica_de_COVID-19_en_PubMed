@@ -1,5 +1,34 @@
-# TFG
-Trabajo de fin de grado de ingeniería de la salud, chatbot RAG langchain covid
-
-# 1. Project's Title
+# 1. Título del proyecto
 Aplicacion_de_chatbot_con_LLM_y_RAG_para_la_gestion_de_informacion_cientifica_de_COVID-19_en_PubMed
+
+# 2. Descripción del proyecto
+
+Trabajo de fin de grado de ingeniería de la salud de la universidad de Burgos, consiste en la creación de un chatbot empleando técnicas de RAG para la especialización de un LLM en información científica empleando asbtracts recuperados de PubMed.
+
+#3. Estructura de directorios.
+
+Descripción de los directorios y ficheros en este repositorio.
+
+/: Directorio base, en el se encuentran el resto de directorios y los
+archivos readme dónde se encuentra información relevante del proyecto,
+las licencias y el código de conducta.
+
+/.github/ISSUE_TEMPLATE/: Carpeta que contienen archivos
+que indican unas guidelines en caso de bugs o peticiones de nuevas
+características.
+
+/application/: Carpeta que contiene el código fuente para ejecutar
+el proyecto.
+
+/data/: Directorio en el que están presentes los datos que posterior-
+mente se vectorizarán para realizar el proceso de RAG
+
+/documentación/: Carpeta que contiene documentación relevante
+para entender la totalidad del proyecto, desde aspectos relevantes de
+su desarrollo hasta guías de ejecución o ejemplos de iteraciones.
+
+#4. Guía de instalación y ejecución del proyecto
+
+Para visualizar la prueba de concepto simplemente hay que ejecutar el
+código presente en el repositorio en un entorno con suficiente GPU, por ejemplo, Kaggle o Google colab y acceder al link que se creará al final de la
+ejecución
