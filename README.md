@@ -45,5 +45,5 @@ Una vez iniciada la GUI de la manera indicada en el punto anterior, simplemente 
 
 # 8. Contacto
 
-Cualquier duda, petición o cuestión en general, sed libres de dejar un issue en este repositorio o contactarme en mi correo dlp1004@alu.ubu.es
+Cualquier duda, petición o cuestión en general, sed libres de dejar un issue en este repositorio o contactarme en mi correo danilp888@gmail.com
 
